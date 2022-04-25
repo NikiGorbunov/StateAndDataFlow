@@ -12,7 +12,7 @@ class TimeCounter: ObservableObject {
     let objectWillChange = PassthroughSubject<TimeCounter, Never>()
     var counter = 3
     var timer: Timer?
-    var buttonTitle = "Start"
+    var buttonTitle = "START"
     
     func startTimer() {
         if counter > 0 {
@@ -32,7 +32,7 @@ class TimeCounter: ObservableObject {
             counter -= 1
         } else {
             killTimer()
-            buttonTitle = "Reset"
+            buttonTitle = "RESET"
         }
         objectWillChange.send(self)
     }
@@ -43,9 +43,9 @@ class TimeCounter: ObservableObject {
     }
     
     private func buttonDidTapped() {
-        if buttonTitle == "Reset" {
+        if buttonTitle == "RESET" {
             counter = 3
-            buttonTitle = "Start"
+            buttonTitle = "START"
         } else {
             buttonTitle = "Wait..."
         }

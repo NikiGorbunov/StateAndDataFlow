@@ -15,6 +15,8 @@
 		A83D7967273068E6000317F2 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83D7966273068E6000317F2 /* RegisterView.swift */; };
 		A83D796927306A53000317F2 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83D796827306A53000317F2 /* UserManager.swift */; };
 		A83D796B27306CFC000317F2 /* StarterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83D796A27306CFC000317F2 /* StarterView.swift */; };
+		CD43B8382817245E00F6EBF1 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD43B8372817245E00F6EBF1 /* StorageManager.swift */; };
+		CD43B83A2817258600F6EBF1 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD43B8392817258600F6EBF1 /* ButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		A83D7966273068E6000317F2 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		A83D796827306A53000317F2 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		A83D796A27306CFC000317F2 /* StarterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterView.swift; sourceTree = "<group>"; };
+		CD43B8372817245E00F6EBF1 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		CD43B8392817258600F6EBF1 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,13 +63,11 @@
 		A83D795527305C9E000317F2 /* StateAndDataFlow */ = {
 			isa = PBXGroup;
 			children = (
-				A83D795627305C9E000317F2 /* StateAndDataFlowApp.swift */,
-				A83D795827305C9E000317F2 /* ContentView.swift */,
-				A83D7966273068E6000317F2 /* RegisterView.swift */,
-				A83D796A27306CFC000317F2 /* StarterView.swift */,
-				A83D7964273062E7000317F2 /* TimeCounter.swift */,
-				A83D796827306A53000317F2 /* UserManager.swift */,
-				A83D795A27305CA2000317F2 /* Assets.xcassets */,
+				CD43B83C281727A100F6EBF1 /* Views */,
+				CD43B83B2817277500F6EBF1 /* Services */,
+				CD43B83D2817282000F6EBF1 /* Models */,
+				CD43B83F28172CBB00F6EBF1 /* App */,
+				CD43B83E28172C9A00F6EBF1 /* Resources */,
 				A83D795C27305CA2000317F2 /* Preview Content */,
 			);
 			path = StateAndDataFlow;
@@ -77,6 +79,50 @@
 				A83D795D27305CA2000317F2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CD43B83B2817277500F6EBF1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A83D7964273062E7000317F2 /* TimeCounter.swift */,
+				CD43B8372817245E00F6EBF1 /* StorageManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		CD43B83C281727A100F6EBF1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A83D7966273068E6000317F2 /* RegisterView.swift */,
+				A83D796A27306CFC000317F2 /* StarterView.swift */,
+				A83D795827305C9E000317F2 /* ContentView.swift */,
+				CD43B8392817258600F6EBF1 /* ButtonView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CD43B83D2817282000F6EBF1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A83D796827306A53000317F2 /* UserManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CD43B83E28172C9A00F6EBF1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A83D795A27305CA2000317F2 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CD43B83F28172CBB00F6EBF1 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A83D795627305C9E000317F2 /* StateAndDataFlowApp.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,7 +197,9 @@
 			files = (
 				A83D795927305C9E000317F2 /* ContentView.swift in Sources */,
 				A83D7967273068E6000317F2 /* RegisterView.swift in Sources */,
+				CD43B83A2817258600F6EBF1 /* ButtonView.swift in Sources */,
 				A83D796B27306CFC000317F2 /* StarterView.swift in Sources */,
+				CD43B8382817245E00F6EBF1 /* StorageManager.swift in Sources */,
 				A83D7965273062E7000317F2 /* TimeCounter.swift in Sources */,
 				A83D796927306A53000317F2 /* UserManager.swift in Sources */,
 				A83D795727305C9E000317F2 /* StateAndDataFlowApp.swift in Sources */,
@@ -299,7 +347,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ru.swiftbook.StateAndDataFlow;
+				PRODUCT_BUNDLE_IDENTIFIER = gorbunovN.StateAndDataFlow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -329,7 +377,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ru.swiftbook.StateAndDataFlow;
+				PRODUCT_BUNDLE_IDENTIFIER = gorbunovN.StateAndDataFlow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
