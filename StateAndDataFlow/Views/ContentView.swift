@@ -13,7 +13,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Text("Hi, \(userManager.name)")
+            Text("Hi, \(userManager.user.name)")
                 .font(.largeTitle)
                 .padding(.top, 100)
             Text("\(timer.counter)")
@@ -25,7 +25,7 @@ struct ContentView: View {
             }
             Spacer()
             ButtonView(title: "LOG OUT", color: .blue) {
-                
+                StorageManager.shared.clear(userManager: userManager)
             }
             
         }

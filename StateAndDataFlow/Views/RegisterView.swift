@@ -8,12 +8,11 @@
 import SwiftUI
 
 struct RegisterView: View {
-    @State private var userName = ""
-    @EnvironmentObject private var user: UserManager
+    @EnvironmentObject private var userManager: UserManager
     
     var body: some View {
         VStack {
-            TextField("Enter your name...", text: $userName)
+            TextField("Enter your name...", text: $userManager.user.name)
                 .multilineTextAlignment(.center)
             Button(action: registerUser) {
                 HStack {
@@ -21,13 +20,14 @@ struct RegisterView: View {
                     Text("OK")
                 }
             }
+            .disabled(!userManager.nameIsValid)
         }
     }
     
     private func registerUser() {
-        if !userName.isEmpty {
-            user.name = userName
-            user.isRegistered.toggle()
+        if !userManager.user.name.isEmpty {
+            userManager.user.isRegistered.toggle()
+            StorageManager.shared.save(user: userManager.user)
         }
     }
 }
@@ -35,5 +35,6 @@ struct RegisterView: View {
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
         RegisterView()
+            .environmentObject(UserManager())
     }
 }

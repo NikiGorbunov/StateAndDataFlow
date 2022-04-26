@@ -47,7 +47,7 @@ class TimeCounter: ObservableObject {
             counter = 3
             buttonTitle = "START"
         } else {
-            buttonTitle = "Wait..."
+            buttonTitle = "WAIT..."
         }
         objectWillChange.send(self)
     }
