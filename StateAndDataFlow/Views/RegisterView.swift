@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct RegisterView: View {
+    
     @EnvironmentObject private var userManager: UserManager
     
     var body: some View {
         VStack {
-            TextField("Enter your name...", text: $userManager.user.name)
-                .multilineTextAlignment(.center)
+            UserNameTF(
+                name: $userManager.user.name,
+                nameIsValid: userManager.nameIsValid
+            )
             Button(action: registerUser) {
                 HStack {
                     Image(systemName: "checkmark.circle")
@@ -22,12 +25,37 @@ struct RegisterView: View {
             }
             .disabled(!userManager.nameIsValid)
         }
+        .padding()
     }
-    
-    private func registerUser() {
+}
+
+extension RegisterView {
+    func registerUser()  {
         if !userManager.user.name.isEmpty {
             userManager.user.isRegistered.toggle()
             StorageManager.shared.save(user: userManager.user)
+        }
+    }
+}
+
+
+struct UserNameTF: View {
+    
+    @Binding var name: String
+    var nameIsValid = false
+    
+    var body: some View {
+        ZStack {
+            TextField("Type your name...", text: $name)
+                .multilineTextAlignment(.center)
+            HStack {
+                Spacer()
+                Text("\(name.count)")
+                    .font(.callout)
+                    .foregroundColor(nameIsValid ? .green : .red)
+                    .padding([.top, .trailing])
+            }
+            .padding(.bottom)
         }
     }
 }
